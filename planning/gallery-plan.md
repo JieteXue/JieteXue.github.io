@@ -6,6 +6,16 @@ The gallery should become an independent `gallery.html` page for life photos, ar
 
 Because the long-term gallery may contain thousands of images and preserve both compressed versions and originals, the repository should not store every original image directly. The repository should store page templates, rendering code, and JSON metadata; image assets should later live in object storage or a CDN.
 
+Current repository structure after migration:
+
+- generated pages publish from the repository root
+- structured source data lives in `content/`
+- generator code lives in `src/site/`
+- page templates live in `src/templates/`
+- browser styles live in `assets/css/`
+- browser scripts live in `assets/js/`
+- vendored browser dependencies live in `assets/vendor/`
+
 ## Storage Model
 
 Recommended long-term storage:
@@ -136,3 +146,10 @@ Avoid templates that require manually writing every image card.
 7. Add gallery CSS to `assets/css/site.css`.
 8. Document storage, EXIF, and metadata maintenance in `README.md`.
 9. Later, add an upload/optimization workflow for object storage.
+
+## Near-Term Notes
+
+- Keep the first version static and dependency-free.
+- Do not add originals to git by default.
+- Prefer CDN/object-storage URLs in `content/gallery.json` once image volume grows.
+- If local gallery assets are needed for testing, keep them under `assets/gallery/` and commit only small optimized variants.

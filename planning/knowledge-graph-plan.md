@@ -1,10 +1,20 @@
-# Personal Knowledge Graph Integration Plan
+# Personal Knowledge Graph Plan
 
 ## Summary
 
-The home page should eventually use the user's own Obsidian-like force graph project instead of maintaining a custom graph implementation inside this repository.
+The home page now uses the user's forked Obsidian-like force graph engine as a static GitHub Pages integration.
 
-The current `vis-network` map is a temporary, low-cost integration for the main entrance. If the existing force graph project already supports drag, zoom, node selection, and relationship rendering, it should become the preferred graph engine for the personal site.
+The first integration is complete:
+
+- the site lives in `JieteXue/JieteXue.github.io`
+- generated pages publish from the repository root
+- source data lives in `content/`
+- templates and generator code live in `src/`
+- browser assets are split under `assets/css/`, `assets/js/`, and `assets/vendor/`
+- the force graph engine is vendored in `assets/vendor/knowledge-graph/engine/`
+- the home page consumes `content/site-map.json`
+
+The next phase is expanding the graph from a small site entrance map into a broader personal knowledge graph.
 
 ## Goal
 
@@ -20,7 +30,7 @@ Build the home page around a personal knowledge graph that can connect:
 
 The graph should feel closer to a personal knowledge system than a generic dashboard widget.
 
-## Preferred Direction
+## Current Direction
 
 Reuse the existing Obsidian-like force graph project.
 
@@ -42,29 +52,36 @@ The force graph project should provide:
 - zoom controls
 - selection / focus behavior
 
-## Candidate Integration Modes
+## Integration Status
 
-### 1. Static Core Copy
+### Completed: Static Core Copy
 
-Use this if the force graph project is plain HTML/CSS/JavaScript.
-
-Possible structure:
+The force graph engine is dependency-free ESM and has been copied into:
 
 ```text
-assets/vendor/knowledge-graph/
-  graph.css
-  graph.js
+assets/vendor/knowledge-graph/engine/
 ```
 
-The home page would load the graph script directly and pass JSON through an inline `<script type="application/json">` block.
+The active adapter is:
 
-This is the simplest GitHub Pages-friendly option.
+```text
+assets/js/site-map.js
+```
 
-### 2. Built Bundle
+The home page passes JSON through an inline `<script type="application/json" id="site-map-data">` block.
 
-Use this if the force graph project is React, Vite, or another bundled frontend.
+Current controls:
 
-Keep the force graph project separate, build it, and copy only the static output into this repository:
+- default dynamic force simulation
+- node drag
+- canvas pan / zoom
+- node hover / selection
+- double-click open
+- force controls for repel, distance, link strength, center strength, and node size
+
+### Deferred: Built Bundle
+
+Only use this if the upstream graph engine later becomes a bundled frontend:
 
 ```text
 assets/vendor/knowledge-graph/
@@ -74,9 +91,9 @@ assets/vendor/knowledge-graph/
 
 Avoid moving the full frontend toolchain into this personal site unless there is a strong reason.
 
-### 3. Adapter Layer
+### Next: Adapter Layer
 
-Use this if the force graph project already expects a different data shape.
+Use this when the graph grows beyond `content/site-map.json`.
 
 Keep this repository's data model stable, then transform it during generation:
 
@@ -88,7 +105,7 @@ assets/vendor/knowledge-graph/graph.js
 
 The adapter should translate site records into the graph project's node and edge format.
 
-### 4. Separate App Link
+### Optional: Separate App Link
 
 Use this if the force graph project is large, experimental, or has its own release cycle.
 
@@ -137,14 +154,30 @@ The generator can later enrich this automatically from:
 
 ## Implementation Steps
 
+### Completed
+
 1. Inspect the existing Obsidian-like force graph project.
-2. Identify whether it is plain static JS, bundled frontend, or a larger app.
-3. Decide whether to copy the static core, consume a built bundle, write an adapter, or link it as a separate app.
-4. Define the graph data contract for this site.
-5. Add validation for graph nodes and edges.
-6. Replace or wrap the current `vis-network` entrance map.
-7. Keep the home page layout dashboard-like, but let the graph become the primary exploratory element.
-8. Verify drag, zoom, node click, focus, and mobile fallback behavior.
+2. Identify it as a dependency-free ESM/static engine.
+3. Copy the static core into `assets/vendor/knowledge-graph/engine/`.
+4. Replace the former temporary graph with the force graph engine.
+5. Keep the home page layout dashboard-like while making the graph the primary exploratory element.
+6. Add drag, zoom, selection, double-click navigation, dynamic physics, and force controls.
+7. Migrate the site out of the profile repository into `JieteXue.github.io`.
+8. Reorganize repository structure into `content/`, `src/`, and split browser assets.
+
+### Next
+
+1. Add validation for `content/site-map.json` node `href`, type, and edge references if it becomes more complex.
+2. Introduce `content/knowledge-graph.json` for broader graph data.
+3. Add `src/site/lib/render-graph-data.mjs` to enrich graph data from:
+   - `content/zhihu-articles.json`
+   - `content/zhihu-categories.json`
+   - `content/zhihu-series.json`
+   - `content/github-projects.json`
+   - future `content/gallery.json`
+4. Decide how many article/category/project nodes should appear on the home page by default.
+5. Add a compact search/filter control only if the graph becomes too dense.
+6. Verify mobile layout once graph data grows.
 
 ## Acceptance Criteria
 
@@ -153,11 +186,11 @@ The generator can later enrich this automatically from:
 - Clicking or double-clicking important nodes can navigate to site pages.
 - The home page remains a guide, not a full workbench.
 - The integration does not force the personal site to adopt a heavy build system unless explicitly chosen later.
-- GitHub Pages can still publish from `/docs`.
+- GitHub Pages publishes from the repository root.
 
 ## Notes
 
-- The current `vis-network` implementation is acceptable as a temporary bridge.
+- The previous temporary `vis-network` implementation has been removed.
 - Prefer reusing the user's graph project over adding another third-party graph library.
-- Do not clone or vendor a large project into this repository until its structure and build output are inspected.
+- Do not vendor additional graph libraries unless the current fork cannot support a required behavior.
 - If the graph project has a good visual system, adapt the site around it rather than forcing it into the current CSS.
