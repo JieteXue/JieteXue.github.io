@@ -1,0 +1,47 @@
+name: Site
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "content/**"
+      - "src/**"
+      - "assets/**"
+      - "index.html"
+      - "zhihu.html"
+      - "github.html"
+      - ".github/workflows/site.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: site-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Validate data and generate pages
+        run: node src/site/build-site.mjs
+
+      - name: Commit generated pages
+        run: |
+          if git diff --quiet; then
+            echo "No site changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html zhihu.html github.html
+          git commit -m "Generate site pages"
+          git push

@@ -1,0 +1,213 @@
+[
+  {
+    "title": "用 TikZ 绘图的辅助工具",
+    "url": "https://zhuanlan.zhihu.com/p/2024245462408930681",
+    "summary": "一个辅助 TikZ 绘图工作流的工具型文章示例。",
+    "tags": [
+      "TikZ",
+      "Tool",
+      "LaTeX"
+    ],
+    "seriesId": "math-physics-tools",
+    "status": "published",
+    "source": "zhihu",
+    "categoryIds": [
+      "code-tool"
+    ]
+  },
+  {
+    "title": "范畴论语言简介 (A Brief Introduction to Category Theory)",
+    "url": "https://zhuanlan.zhihu.com/p/2012820675967084119",
+    "summary": "用较轻量的方式介绍范畴论语言和基本对象。",
+    "tags": [
+      "Math",
+      "Category Theory"
+    ],
+    "seriesId": "math-structure-language",
+    "status": "published",
+    "source": "zhihu",
+    "categoryIds": [
+      "math"
+    ]
+  },
+  {
+    "title": "诺特 (Noether) 定理【简介】",
+    "url": "https://zhuanlan.zhihu.com/p/1999801583450469239",
+    "summary": "介绍诺特定理的核心思想，以及对称性与守恒律之间的关系。",
+    "tags": [
+      "Physics",
+      "Noether"
+    ],
+    "status": "published",
+    "source": "zhihu",
+    "categoryIds": [
+      "physics"
+    ]
+  },
+  {
+    "title": "推迟势和电磁辐射",
+    "url": "https://zhuanlan.zhihu.com/p/1995599112456934512",
+    "summary": "关于推迟势、电磁场传播以及辐射图像的物理笔记。",
+    "tags": [
+      "Physics",
+      "Electromagnetism"
+    ],
+    "seriesId": "electromagnetism-notes",
+    "status": "published",
+    "source": "zhihu",
+    "categoryIds": [
+      "physics"
+    ]
+  },
+  {
+    "title": "缓变处理之相位积累法",
+    "url": "https://zhuanlan.zhihu.com/p/1928352347811222651",
+    "summary": "围绕缓变近似与相位积累法的推导和应用整理。",
+    "tags": [
+      "Physics",
+      "Approximation"
+    ],
+    "status": "published",
+    "source": "zhihu",
+    "categoryIds": [
+      "physics"
+    ]
+  },
+  {
+    "title": "ICG 游戏 [NIM 博弈与 Plus 版] 是否有必胜策略？",
+    "url": "https://zhuanlan.zhihu.com/p/1918439473382950153",
+    "summary": "讨论 NIM 博弈及 Plus 版本中的必胜策略问题。",
+    "tags": [
+      "Math",
+      "Game Theory"
+    ],
+    "status": "published",
+    "source": "zhihu",
+    "categoryIds": [
+      "math"
+    ]
+  },
+  {
+    "title": "随体导数分析与对积分的求导",
+    "url": "https://zhuanlan.zhihu.com/p/716217523",
+    "summary": "关于随体导数、积分区域变化和积分求导的分析笔记。",
+    "tags": [
+      "Physics",
+      "Fluid Mechanics"
+    ],
+    "seriesId": "fluid-mechanics-notes",
+    "status": "published",
+    "source": "zhihu",
+    "categoryIds": [
+      "physics"
+    ]
+  },
+  {
+    "title": "刚体在转动系中受到的科里奥利力（矩）",
+    "url": "https://zhuanlan.zhihu.com/p/714236094",
+    "summary": "分析刚体在转动参考系中受到的科里奥利力和力矩。",
+    "tags": [
+      "Physics",
+      "Mechanics"
+    ],
+    "status": "published",
+    "source": "zhihu",
+    "categoryIds": [
+      "physics"
+    ]
+  },
+  {
+    "title": "流体力学中的伯努利方程",
+    "url": "https://zhuanlan.zhihu.com/p/714077475",
+    "summary": "整理伯努利方程在流体力学中的形式、条件和理解方式。",
+    "tags": [
+      "Physics",
+      "Fluid Mechanics"
+    ],
+    "seriesId": "fluid-mechanics-notes",
+    "status": "published",
+    "source": "zhihu",
+    "categoryIds": [
+      "physics"
+    ]
+  },
+  {
+    "title": "Mathematica 解偏微分方程 (PDE)",
+    "url": "https://zhuanlan.zhihu.com/p/695471799",
+    "summary": "使用 Mathematica 处理偏微分方程问题的工具型记录。",
+    "tags": [
+      "Mathematica",
+      "PDE",
+      "Tool"
+    ],
+    "seriesId": "mathematica-tools",
+    "status": "published",
+    "source": "zhihu",
+    "categoryIds": [
+      "code-tool"
+    ]
+  },
+  {
+    "title": "Mathematica 模拟衍射（正多边形）",
+    "url": "https://zhuanlan.zhihu.com/p/682031004",
+    "summary": "用 Mathematica 模拟正多边形孔径衍射图样。",
+    "tags": [
+      "Mathematica",
+      "Physics",
+      "Diffraction"
+    ],
+    "seriesId": "mathematica-tools",
+    "status": "published",
+    "source": "zhihu",
+    "categoryIds": [
+      "code-tool",
+      "physics"
+    ]
+  },
+  {
+    "title": "电（磁）偶极子在电（磁）场中的受力",
+    "url": "https://zhuanlan.zhihu.com/p/681640628",
+    "summary": "梳理电偶极子和磁偶极子在外场中的受力表达。",
+    "tags": [
+      "Physics",
+      "Electromagnetism"
+    ],
+    "seriesId": "electromagnetism-notes",
+    "status": "published",
+    "source": "zhihu",
+    "categoryIds": [
+      "physics"
+    ]
+  },
+  {
+    "title": "多极展开方法其一——勒让德多项式的母函数",
+    "url": "https://zhuanlan.zhihu.com/p/648319578",
+    "summary": "从勒让德多项式的母函数切入理解多极展开方法。",
+    "tags": [
+      "Math",
+      "Physics",
+      "Legendre"
+    ],
+    "seriesId": "electromagnetism-notes",
+    "status": "published",
+    "source": "zhihu",
+    "categoryIds": [
+      "math",
+      "physics"
+    ]
+  },
+  {
+    "title": "浸渐不变量的推导及一点应用",
+    "url": "https://zhuanlan.zhihu.com/p/605428371",
+    "summary": "推导浸渐不变量，并整理其在物理问题中的一点应用。",
+    "tags": [
+      "Physics",
+      "Mechanics"
+    ],
+    "status": "published",
+    "source": "zhihu",
+    "categoryIds": [
+      "physics"
+    ]
+  }
+]

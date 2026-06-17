@@ -1,0 +1,66 @@
+[
+  {
+    "id": "code-tool",
+    "label": "Code / Tool",
+    "description": "代码、工具、自动化和工程实践。",
+    "order": 10,
+    "aliases": [
+      "tools",
+      "coding"
+    ],
+    "display": {
+      "tone": "tool",
+      "showInNav": true
+    },
+    "defaultExpanded": true,
+    "children": []
+  },
+  {
+    "id": "math-physics",
+    "label": "Math / Physics",
+    "description": "数学、物理和相关学习笔记。",
+    "order": 20,
+    "aliases": [
+      "math",
+      "physics"
+    ],
+    "display": {
+      "tone": "knowledge",
+      "showInNav": true
+    },
+    "defaultExpanded": true,
+    "children": [
+      {
+        "id": "math",
+        "label": "Math",
+        "description": "数学主题、证明、结构和问题整理。",
+        "order": 10,
+        "aliases": [
+          "mathematics"
+        ],
+        "display": {
+          "tone": "math",
+          "showInNav": true
+        },
+        "defaultExpanded": true,
+        "children": []
+      },
+      {
+        "id": "physics",
+        "label": "Physics",
+        "description": "物理直觉、模型、公式和推导笔记。",
+        "order": 20,
+        "aliases": [
+          "mechanics",
+          "electromagnetism"
+        ],
+        "display": {
+          "tone": "physics",
+          "showInNav": true
+        },
+        "defaultExpanded": true,
+        "children": []
+      }
+    ]
+  }
+]

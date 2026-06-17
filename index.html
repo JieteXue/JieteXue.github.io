@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <title>JieteXue · Personal Blog</title>
+    <meta name="description" content="我是一个持续整理数学、物理和工具使用经验的学习者，把理解过程沉淀成文章、项目和可维护的公开记录。" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d1117'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='Arial,sans-serif' font-size='24' font-weight='700' fill='%237dd3fc'%3EJX%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./assets/css/site.css" />
+    <link rel="prefetch" href="./zhihu.html" as="document" />
+    <link rel="prefetch" href="./github.html" as="document" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="site-shell topbar-inner">
+        <a class="brand" href="./index.html" aria-label="JieteXue home">
+          <span class="mark">JX</span>
+          <span>JieteXue</span>
+        </a>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="./index.html" aria-current="page">Home</a>
+          <a href="./zhihu.html">Zhihu</a>
+          <a href="./github.html">GitHub</a>
+          <a href="https://www.zhihu.com/people/7-63-5-13-42" target="_blank" rel="noreferrer">Profile</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-shell home-shell">
+      <section class="dashboard-hero" aria-labelledby="hero-title">
+        <div class="dashboard-intro">
+          <p class="eyebrow">Personal dashboard</p>
+          <h1 id="hero-title">JieteXue</h1>
+          <p class="tagline">把学习变成可链接的记录</p>
+          <p class="lead">我是一个持续整理数学、物理和工具使用经验的学习者，把理解过程沉淀成文章、项目和可维护的公开记录。</p>
+          <p class="site-notice">本站正在测试搭建中，内容与功能有待继续完善。</p>
+        </div>
+        <aside class="dashboard-profile" aria-label="Profile summary">
+            <dl class="intro-details">
+              <div>
+                <dt>身份</dt>
+                <dd>学习者 / 写作者</dd>
+              </div>
+              <div>
+                <dt>方向</dt>
+                <dd>数学、物理、计算与工具</dd>
+              </div>
+              <div>
+                <dt>输出</dt>
+                <dd>知乎文章、GitHub 项目、知识整理</dd>
+              </div>
+            </dl>
+        </aside>
+      </section>
+
+      <section class="graph-console" aria-label="Interactive site map">
+        <div class="graph-panel">
+          <div class="graph-toolbar">
+            <div>
+              <p class="eyebrow">Interactive map</p>
+              <h2>知识与入口地图</h2>
+            </div>
+          </div>
+          <div class="site-map-network" aria-label="Draggable and zoomable knowledge map">
+            <canvas id="site-map-network" aria-label="Draggable and zoomable knowledge map"></canvas>
+            <p id="site-map-status" class="graph-status" aria-live="polite">Preparing graph...</p>
+          </div>
+        </div>
+
+        <aside class="graph-detail" id="site-map-detail">
+          <div id="site-map-node-detail" aria-live="polite">
+            <p class="eyebrow">Selected node</p>
+            <h2>未选择节点</h2>
+            <p>点击图中的节点查看入口说明；拖拽节点、滚轮缩放可以探索关系。</p>
+          </div>
+          <form class="force-controls" aria-label="Force graph controls">
+            <label>
+              <span>Repel</span>
+              <output for="graph-repel" data-force-output="repelStrength">520</output>
+              <input id="graph-repel" type="range" min="160" max="1100" step="20" value="520" data-force-input="repelStrength" />
+            </label>
+            <label>
+              <span>Distance</span>
+              <output for="graph-distance" data-force-output="linkDistance">150</output>
+              <input id="graph-distance" type="range" min="70" max="260" step="5" value="150" data-force-input="linkDistance" />
+            </label>
+            <label>
+              <span>Link</span>
+              <output for="graph-link" data-force-output="linkStrength">1.05</output>
+              <input id="graph-link" type="range" min="0.2" max="2.4" step="0.05" value="1.05" data-force-input="linkStrength" />
+            </label>
+            <label>
+              <span>Center</span>
+              <output for="graph-center" data-force-output="centerStrength">0.07</output>
+              <input id="graph-center" type="range" min="0" max="0.18" step="0.005" value="0.07" data-force-input="centerStrength" />
+            </label>
+            <label>
+              <span>Node size</span>
+              <output for="graph-node-size" data-display-output="nodeSize">1.08</output>
+              <input id="graph-node-size" type="range" min="0.75" max="1.8" step="0.02" value="1.08" data-display-input="nodeSize" />
+            </label>
+          </form>
+        </aside>
+      </section>
+
+      <section class="command-center" aria-label="Site command centre">
+        <a class="mission-panel" href="./zhihu.html">
+          <p class="eyebrow">Primary route</p>
+          <h2>知乎文章库</h2>
+          <p>按章节、系列和主题整理已经发表在知乎上的文章。这里是站点目前最主要的阅读入口，也是后续知识地图的中心。</p>
+          <div class="mission-meta" aria-label="Article archive summary">
+            <span>14 articles</span>
+            <span>4 category nodes</span>
+            <span>5 series</span>
+          </div>
+          <strong>进入文章库</strong>
+        </a>
+
+        <aside class="command-rail" aria-label="Dashboard status">
+          <section>
+            <p class="eyebrow">Now</p>
+            <h2>探索中</h2>
+            <p>当前主要在整理数学物理笔记，同时搭建支持写作和知识管理的小工具。</p>
+          </section>
+          <section>
+            <p class="eyebrow">Interests</p>
+          <div class="tag-row dashboard-tags">
+            <span>数学结构语言</span>
+            <span>物理笔记</span>
+            <span>计算与可视化工具</span>
+            <span>知识整理自动化</span>
+          </div>
+          </section>
+          <section>
+            <p class="eyebrow">Build</p>
+            <p>首页信息来自 <code>content/profile.json</code>，内容页由 JSON 和模板生成。</p>
+          </section>
+        </aside>
+      </section>
+
+      <section class="route-console" aria-label="Secondary routes">
+        <a href="./github.html">
+          <span>01</span>
+          <div>
+            <strong>GitHub 项目</strong>
+            <p>精选仓库、工具建设和后续可公开维护的代码项目。</p>
+          </div>
+        </a>
+        <a href="./zhihu.html#tools">
+          <span>02</span>
+          <div>
+            <strong>工具与代码</strong>
+            <p>LaTeX / TikZ / Mathematica 相关工具流会逐渐收拢到这里。</p>
+          </div>
+        </a>
+        <a href="https://github.com/JieteXue/JieteXue" target="_blank" rel="noreferrer">
+          <span>03</span>
+          <div>
+            <strong>About / Links</strong>
+            <p>回到 profile 仓库，查看 README、统计图和更多公开入口。</p>
+          </div>
+        </a>
+      </section>
+
+      <section class="profile-console" aria-label="Profile notes">
+        <div>
+          <p class="eyebrow">About</p>
+          <h2>学习者</h2>
+          <p>这里记录我对数学、物理、工具和写作流程的长期整理。</p>
+        </div>
+        <div>
+          <p class="eyebrow">Timeline</p>
+          <div class="mini-timeline">
+            <div>
+              <span>长期</span>
+              <strong>数学与物理学习记录</strong>
+            </div>
+            <div>
+              <span>持续</span>
+              <strong>知乎文章写作</strong>
+            </div>
+            <div>
+              <span>进行中</span>
+              <strong>个人 GitHub Pages 主页</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+      <script type="application/json" id="site-map-data">{"nodes":[{"id":"home","label":"JieteXue","type":"root","description":"个人站主入口，连接文章、项目、工具和后续图库。","href":"./index.html","x":480,"y":260},{"id":"zhihu","label":"知乎文章库","type":"primary","description":"按章节、系列和主题整理已经发表在知乎上的文章。","href":"./zhihu.html","x":230,"y":190},{"id":"math-physics","label":"Math / Physics","type":"knowledge","description":"数学、物理和相关学习笔记。","href":"./zhihu.html#math-physics","x":120,"y":360},{"id":"math","label":"Math","type":"math","description":"数学主题、证明、结构和问题整理。","href":"./zhihu.html#math","x":280,"y":470},{"id":"physics","label":"Physics","type":"physics","description":"物理直觉、模型、公式和推导笔记。","href":"./zhihu.html#physics","x":80,"y":520},{"id":"code-tool","label":"Code / Tool","type":"tool","description":"代码、工具、自动化和工程实践。","href":"./zhihu.html#code-tool","x":690,"y":150},{"id":"github","label":"GitHub 项目","type":"project","description":"精选仓库、工具建设和后续可公开维护的代码项目。","href":"./github.html","x":790,"y":330},{"id":"gallery","label":"Gallery","type":"future","description":"后续独立图库入口，用于生活照片、文章配图和工具输出。","href":"#","x":560,"y":500},{"id":"profile","label":"About / Links","type":"profile","description":"个人简介、维护说明和外部入口。","href":"https://github.com/JieteXue/JieteXue","x":450,"y":80}],"edges":[{"from":"home","to":"zhihu"},{"from":"zhihu","to":"math-physics"},{"from":"math-physics","to":"math"},{"from":"math-physics","to":"physics"},{"from":"home","to":"code-tool"},{"from":"code-tool","to":"github"},{"from":"home","to":"gallery"},{"from":"home","to":"profile"}]}</script>
+      <script type="module" src="./assets/js/site-map.js"></script>
+    </main>
+
+    <footer class="footer">
+      <div class="site-shell">Built for GitHub Pages · Updated from structured data files.</div>
+    </footer>
+  </body>
+</html>

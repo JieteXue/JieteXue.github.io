@@ -1,0 +1,73 @@
+[
+  {
+    "id": "math-structure-language",
+    "label": "数学结构语言系列",
+    "description": "围绕数学结构、语言和组织方式的文章路径。",
+    "categoryIds": [
+      "math"
+    ],
+    "tags": [
+      "Math",
+      "Category Theory"
+    ],
+    "order": 10,
+    "status": "active"
+  },
+  {
+    "id": "electromagnetism-notes",
+    "label": "电磁学笔记系列",
+    "description": "电磁场、势、多极展开和偶极子相关推导。",
+    "categoryIds": [
+      "physics"
+    ],
+    "tags": [
+      "Physics",
+      "Electromagnetism"
+    ],
+    "order": 20,
+    "status": "active"
+  },
+  {
+    "id": "fluid-mechanics-notes",
+    "label": "流体力学笔记系列",
+    "description": "流体力学中的导数、积分区域变化和经典方程整理。",
+    "categoryIds": [
+      "physics"
+    ],
+    "tags": [
+      "Physics",
+      "Fluid Mechanics"
+    ],
+    "order": 30,
+    "status": "active"
+  },
+  {
+    "id": "mathematica-tools",
+    "label": "Mathematica 工具系列",
+    "description": "使用 Mathematica 做符号、数值和物理模拟的工具记录。",
+    "categoryIds": [
+      "code-tool"
+    ],
+    "tags": [
+      "Mathematica",
+      "Tool"
+    ],
+    "order": 40,
+    "status": "active"
+  },
+  {
+    "id": "math-physics-tools",
+    "label": "数学物理工具系列",
+    "description": "面向数学物理写作、绘图和辅助计算的小工具。",
+    "categoryIds": [
+      "code-tool",
+      "math"
+    ],
+    "tags": [
+      "Tool",
+      "LaTeX"
+    ],
+    "order": 50,
+    "status": "active"
+  }
+]
